@@ -1,34 +1,44 @@
-const sections = document.querySelectorAll(".section");
-const lines = document.querySelectorAll(".line");
+const canvas = document.getElementById('rippleCanvas');
+const ctx = canvas.getContext('2d');
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-sections.forEach((section) => {
-  section.style.opacity = 0;
-  section.style.transform = "translateY(60px)";
-  section.style.transition = "all 1s ease";
-  observer.observe(section);
+let ripples = [];
+
+class Ripple {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.radius = 0;
+        this.opacity = 0.5;
+    }
+    update() {
+        this.radius += 2;
+        this.opacity -= 0.01;
+    }
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(0, 0, 0, ${this.opacity})`;
+        ctx.stroke();
+    }
+}
+
+window.addEventListener('mousemove', (e) => {
+    ripples.push(new Ripple(e.clientX, e.clientY));
 });
 
-lines.forEach((line) => {
-  const lineObserver = new IntersectionObserver(
-    (entries) => {
-      if (entries[0].isIntersecting) {
-        line.style.transform = "scaleX(1)";
-        line.style.transition = "transform 1s ease";
-      }
-    },
-    { threshold: 0.1 }
-  );
-  lineObserver.observe(line);
-});
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < ripples.length; i++) {
+        ripples[i].update();
+        ripples[i].draw();
+        if (ripples[i].opacity <= 0) {
+            ripples.splice(i, 1);
+            i--;
+        }
+    }
+    requestAnimationFrame(animate);
+}
+animate();
