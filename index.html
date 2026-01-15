@@ -2,86 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>E450MEDIA | Elite Digital Studio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <canvas id="rippleCanvas"></canvas>
-    <div class="glass-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
+    <div class="bg-wrapper">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+        <div class="line line-3"></div>
+        <div class="glass-orb orb-v1"></div>
+        <div class="glass-orb orb-v2"></div>
+        <canvas id="rippleCanvas"></canvas>
     </div>
 
     <nav>
-        <img src="logo.png" alt="E450" class="logo">
-        <div class="nav-links">
-            <a href="#expertise">Expertise</a>
-            <a href="#approach">Approach</a>
-            <a href="https://wa.me/916360199676" class="nav-cta">Start a Project</a>
+        <div class="nav-inner">
+            <div class="logo-box">
+                <img src="logo.png" alt="E450MEDIA">
+            </div>
+            <div class="nav-links">
+                <a href="#expertise" class="hide-mobile">Expertise</a>
+                <a href="https://wa.me/916360199676" class="btn-cta">Start Project</a>
+            </div>
         </div>
     </nav>
 
     <main>
         <header class="hero">
             <div class="container">
-                <span class="eyebrow">Digital Management Studio</span>
-                <h1>We manage.<br><span class="italic">You grow.</span></h1>
-                <p class="subtitle">High-fidelity social architecture and performance marketing for visionaries. Premium results, startup-accessible rates.</p>
-                <div class="hero-btns">
-                    <a href="https://wa.me/916360199676" class="btn-main">Get a Free Audit</a>
+                <div class="hero-text-box">
+                    <span class="eyebrow">Digital Management Studio</span>
+                    <h1>We manage.<br><span class="italic">You grow.</span></h1>
+                    <p class="subtitle">Bespoke social architecture and performance marketing for the next generation of visionaries.</p>
+                    <div class="hero-actions">
+                        <a href="https://wa.me/916360199676" class="btn-fill">Free Audit</a>
+                        <span class="price-label">Startup Friendly Rates</span>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <section id="expertise" class="services">
+        <section id="expertise" class="grid-section">
             <div class="container">
-                <div class="section-head">
-                    <h2>End-to-End Solutions</h2>
-                    <p>Comprehensive digital growth without the enterprise overhead.</p>
-                </div>
                 <div class="grid">
                     <div class="card">
                         <span class="num">01</span>
                         <h3>Social Architecture</h3>
-                        <p>Documented foundations that ensure every post aligns with a measurable, long-term vision.</p>
+                        <p>Documented strategies that transform digital noise into brand authority.</p>
                     </div>
                     <div class="card">
                         <span class="num">02</span>
                         <h3>Content Production</h3>
-                        <p>High-impact visual assets designed to stop the scroll and establish immediate brand authority.</p>
+                        <p>High-fidelity visual assets designed for maximum scroll-stop impact.</p>
                     </div>
                     <div class="card">
                         <span class="num">03</span>
-                        <h3>Performance Growth</h3>
-                        <p>Targeted social advertising strategies focused on high-conversion and rapid market penetration.</p>
+                        <h3>Performance</h3>
+                        <p>Strategic advertising growth focused on sustainable market penetration.</p>
                     </div>
-                    <div class="card">
-                        <span class="num">04</span>
-                        <h3>Profile Management</h3>
-                        <p>Elite management of executive profiles to position founders as global thought leaders.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="contact-box">
-                <h2>Ready to scale?</h2>
-                <p>No complex contracts. Just growth.</p>
-                <div class="details">
-                    <a href="mailto:e450media@gmail.com">e450media@gmail.com</a>
-                    <a href="https://wa.me/916360199676">+91 63601 99676</a>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2026 E450MEDIA. Built for the next generation of brands.</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
