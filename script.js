@@ -9,7 +9,7 @@ class Ripple {
         this.x = x; this.y = y;
         this.radius = 0; this.opacity = 0.4;
     }
-    update() { this.radius += 2.2; this.opacity -= 0.01; }
+    update() { this.radius += 2.4; this.opacity -= 0.01; }
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -36,10 +36,5 @@ function animate() {
     });
     requestAnimationFrame(animate);
 }
-
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-
+window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
 animate();
