@@ -3,66 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E450MEDIA | Digital Management for Growth</title>
+    <title>E450MEDIA | Elite Digital Management</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <canvas id="rippleCanvas"></canvas>
+    <div class="bg-elements">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
 
     <nav>
-        <div class="logo">E450MEDIA</div>
+        <div class="logo-container">
+            <img src="logo.png" alt="E450MEDIA Logo" class="nav-logo">
+        </div>
         <ul>
             <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#approach">Our Approach</a></li>
             <li><a href="#contact" class="btn-nav">Get Started</a></li>
         </ul>
     </nav>
 
     <header>
-        <div class="hero">
-            <h1>We manage. <span class="outline">You grow.</span></h1>
-            <p>Premium digital management tailored for startups and small-scale businesses. Professionalism without the enterprise price tag.</p>
-            <div class="cta-group">
-                <a href="#contact" class="btn-primary">Claim Your Free Audit</a>
-                <p class="sub-text">Accessible rates for emerging brands.</p>
+        <div class="hero-content">
+            <span class="badge">Digital Management Studio</span>
+            <h1>We manage.<br><span class="italic-text">You grow.</span></h1>
+            <p class="hero-subtitle">High-fidelity management and content strategy for high-growth startups and small-scale businesses. Premium results, accessible structure.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Book an Audit</a>
+                <span class="pricing-hint">Scalable plans for emerging brands</span>
             </div>
         </div>
-        <div class="shape s1"></div>
-        <div class="shape s2"></div>
     </header>
 
     <section id="services">
-        <h2>What We Do</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Digital Management</h3>
-                <p>End-to-end oversight of your online presence, ensuring clarity and consistency across all platforms.</p>
+        <div class="section-header">
+            <h2>The Ecosystem</h2>
+            <p>Comprehensive solutions designed for sustainability.</p>
+        </div>
+        <div class="service-grid">
+            <div class="service-card">
+                <span class="card-num">01</span>
+                <h3>Strategic Management</h3>
+                <p>Full-spectrum oversight of your digital footprint. We handle the technical consistency so you can handle the scale.</p>
             </div>
-            <div class="card">
-                <h3>Content Creation</h3>
-                <p>High-impact, on-brand content designed to build immediate trust with your target audience.</p>
+            <div class="service-card">
+                <span class="card-num">02</span>
+                <h3>Content Architecture</h3>
+                <p>Clean, intentional assets that build authority. We create the visual and written language your customers trust.</p>
             </div>
-            <div class="card">
-                <h3>Brand Growth</h3>
-                <p>Strategic positioning and structural planning to turn small businesses into market leaders.</p>
+            <div class="service-card">
+                <span class="card-num">03</span>
+                <h3>Brand Velocity</h3>
+                <p>Data-driven positioning for small businesses. We structure your digital presence to outpace established competitors.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="approach">
+        <div class="split-content">
+            <div class="text-block">
+                <h2>Why E450MEDIA?</h2>
+                <p>Most agencies charge enterprise rates for startup-level work. We’ve flipped the script. We provide the highest tier of professional management specifically priced for the next generation of small businesses.</p>
+                <ul class="check-list">
+                    <li>No long-term lock-in contracts</li>
+                    <li>Direct access to lead strategists</li>
+                    <li>Tailored pricing for small-scale operations</li>
+                </ul>
+            </div>
+            <div class="visual-block">
+                <img src="logo.png" alt="Watermark" class="watermark-logo">
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <div class="contact-box">
-            <h2>Let’s Build Something Together</h2>
-            <p>Stop overpaying for agencies. Get high-tier management at <strong>startup-friendly rates</strong>.</p>
-            <div class="info">
-                <p><strong>WhatsApp:</strong> +91 63601 99676</p>
-                <p><strong>Email:</strong> e450media@gmail.com</p>
+        <div class="contact-card">
+            <h2>Ready to Elevate?</h2>
+            <p>Our consultation is free. Our impact is immediate.</p>
+            <div class="contact-details">
+                <a href="mailto:e450media@gmail.com" class="detail-item">e450media@gmail.com</a>
+                <a href="https://wa.me/916360199676" class="detail-item">+91 63601 99676</a>
             </div>
-            <a href="https://wa.me/916360199676" class="btn-primary">Message on WhatsApp</a>
+            <a href="https://wa.me/916360199676" class="btn-black">Secure Your Spot</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 E450MEDIA. Built for the next generation of businesses.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 E450MEDIA. Professionalism. Clarity. Growth.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
