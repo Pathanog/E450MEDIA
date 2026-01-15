@@ -9,7 +9,7 @@ class Ripple {
         this.x = x; this.y = y;
         this.radius = 0; this.opacity = 0.4;
     }
-    update() { this.radius += 2; this.opacity -= 0.01; }
+    update() { this.radius += 2.2; this.opacity -= 0.01; }
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -19,14 +19,14 @@ class Ripple {
     }
 }
 
-const trigger = (e) => {
+const interaction = (e) => {
     const x = e.clientX || (e.touches && e.touches[0].clientX);
     const y = e.clientY || (e.touches && e.touches[0].clientY);
     if (x && y) ripples.push(new Ripple(x, y));
 };
 
-window.addEventListener('mousemove', trigger);
-window.addEventListener('touchmove', trigger);
+window.addEventListener('mousemove', interaction);
+window.addEventListener('touchmove', interaction);
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
