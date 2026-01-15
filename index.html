@@ -1,40 +1,72 @@
-<section id="process" class="process-section">
-    <div class="container">
-        <div class="section-head">
-            <span class="eyebrow">Onboarding</span>
-            <h2>How We Transform Your Brand</h2>
-        </div>
-        
-        <div class="process-list">
-            <div class="process-item">
-                <div class="p-meta">
-                    <span class="p-num">STEP 01</span>
-                </div>
-                <div class="p-content">
-                    <h4>The Deep Audit</h4>
-                    <p>We analyze your current social ecosystem and competitors to find the gaps your brand should fill.</p>
-                </div>
-            </div>
-
-            <div class="process-item">
-                <div class="p-meta">
-                    <span class="p-num">STEP 02</span>
-                </div>
-                <div class="p-content">
-                    <h4>Architecture & Design</h4>
-                    <p>We build a documented social strategy—defining your voice, visual language, and content pillars.</p>
-                </div>
-            </div>
-
-            <div class="process-item">
-                <div class="p-meta">
-                    <span class="p-num">STEP 03</span>
-                </div>
-                <div class="p-content">
-                    <h4>Execution & Scale</h4>
-                    <p>Your dedicated studio team takes over daily management, production, and performance tracking.</p>
-                </div>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>E450MEDIA | Elite Digital Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-system">
+        <div class="grid-line l1"></div>
+        <div class="grid-line l2"></div>
+        <div class="grid-line l3"></div>
+        <div class="fluid-orb o1"></div>
+        <div class="fluid-orb o2"></div>
+        <canvas id="rippleCanvas"></canvas>
     </div>
-</section>
+
+    <nav>
+        <div class="nav-wrapper">
+            <img src="logo.png" alt="E450MEDIA" class="brand-logo">
+            <div class="nav-actions">
+                <a href="#expertise" class="nav-link hide-mobile">Expertise</a>
+                <a href="https://wa.me/916360199676" class="nav-button">Start Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="hero">
+            <div class="content-limit">
+                <span class="eyebrow">Digital Management Studio</span>
+                <h1>We manage.<br><span class="thin-italic">You grow.</span></h1>
+                <p class="hero-desc">Bespoke social architecture and performance marketing for the next generation of global visionaries.</p>
+                <div class="cta-row">
+                    <a href="https://wa.me/916360199676" class="btn-primary">Free Audit</a>
+                    <span class="pricing-tag">Startup Friendly Rates</span>
+                </div>
+            </div>
+        </header>
+
+        <section id="onboarding" class="process-box">
+            <div class="content-limit">
+                <div class="header-split">
+                    <span class="eyebrow">Onboarding</span>
+                    <h2>How We Transform Your Brand</h2>
+                </div>
+                <div class="steps-container">
+                    <div class="step">
+                        <span class="step-id">01</span>
+                        <h4>The Deep Audit</h4>
+                        <p>We analyze your current social ecosystem and competitors to find the gaps your brand should fill.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-id">02</span>
+                        <h4>Architecture & Design</h4>
+                        <p>We build a documented social strategy—defining your voice, visual language, and content pillars.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-id">03</span>
+                        <h4>Execution & Scale</h4>
+                        <p>Your dedicated studio team takes over daily management, production, and performance tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
