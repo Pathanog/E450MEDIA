@@ -1,160 +1,170 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:"Outfit",sans-serif;
+  background:#fff;
+  color:#000;
+  overflow-x:hidden;
+  transition:.3s;
 }
 
-body {
-  font-family: "Outfit", sans-serif;
-  background: #ffffff;
-  color: #000000;
-  overflow: hidden;
-  transition: background .4s, color .4s;
+body.dark{
+  background:#0c0c11;
+  color:#fff;
 }
 
-body.dark {
-  background: #0b0b10;
-  color: #ffffff;
-}
-
-/* ===== BACKGROUND LAYERS ===== */
-.bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-}
-
-/* GRADIENT */
-.gradient {
-  position: absolute;
-  inset: -35%;
+/* BACKGROUND */
+.bg{position:fixed;inset:0;z-index:-1}
+.gradient{
+  position:absolute;inset:-40%;
   background:
-    radial-gradient(circle at 20% 20%, rgba(220,220,220,.5), transparent 45%),
-    radial-gradient(circle at 80% 80%, rgba(240,240,240,.5), transparent 50%);
-  animation: float 35s infinite alternate ease-in-out;
-  filter: blur(0px);
+    radial-gradient(circle at 20% 20%,rgba(220,220,220,.6),transparent 45%),
+    radial-gradient(circle at 80% 80%,rgba(245,245,245,.6),transparent 50%);
+  animation:float 30s infinite alternate ease-in-out;
 }
-
-body.dark .gradient {
+body.dark .gradient{
   background:
-    radial-gradient(circle at 20% 20%, rgba(35,35,45,.7), transparent 45%),
-    radial-gradient(circle at 80% 80%, rgba(20,20,30,.9), transparent 50%);
+    radial-gradient(circle at 20% 20%,rgba(40,40,55,.8),transparent 45%),
+    radial-gradient(circle at 80% 80%,rgba(20,20,30,.9),transparent 50%);
 }
+@keyframes float{to{transform:translate(-120px,-90px)}}
 
-@keyframes float {
-  to { transform: translate(-120px, -90px); }
-}
-
-/* MOVING LINES */
-.lines {
-  position: absolute;
-  inset: 0;
-  background-image:
+.lines{
+  position:absolute;inset:0;
+  background:
     repeating-linear-gradient(
       to right,
-      rgba(0,0,0,0.04) 0,
-      rgba(0,0,0,0.04) 1px,
+      rgba(0,0,0,.06) 0,
+      rgba(0,0,0,.06) 1px,
       transparent 1px,
-      transparent 160px
+      transparent 140px
     );
-  animation: drift 80s linear infinite;
+  animation:lines 16s linear infinite;
 }
-
-body.dark .lines {
-  background-image:
+body.dark .lines{
+  background:
     repeating-linear-gradient(
       to right,
-      rgba(255,255,255,0.05) 0,
-      rgba(255,255,255,0.05) 1px,
+      rgba(255,255,255,.06) 0,
+      rgba(255,255,255,.06) 1px,
       transparent 1px,
-      transparent 160px
+      transparent 140px
     );
 }
+@keyframes lines{to{background-position:200px 0}}
 
-@keyframes drift {
-  from { background-position: 0 0; }
-  to { background-position: 200px 0; }
+.cursor-glow{
+  position:absolute;
+  width:240px;height:240px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(0,0,0,.12),transparent 60%);
+  filter:blur(40px);
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+}
+body.dark .cursor-glow{
+  background:radial-gradient(circle,rgba(255,255,255,.12),transparent 60%);
 }
 
-/* CURSOR GLOW */
-.cursor-glow {
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,0,0,.09), transparent 60%);
-  filter: blur(40px);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
+canvas{position:absolute;inset:0}
+
+/* NAV */
+nav{
+  position:fixed;top:0;width:100%;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(20px);
+  z-index:1000;
+}
+body.dark nav{background:rgba(12,12,17,.85)}
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:1.2rem 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-weight:900;
+  font-size:1.2rem;
+  letter-spacing:1px;
+}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-link{
+  text-decoration:none;
+  color:inherit;
+  opacity:.6;
+}
+.nav-link.active{opacity:1;font-weight:600}
+
+.nav-actions{display:flex;gap:.6rem;align-items:center}
+
+/* BUTTONS */
+.btn{
+  border:1.5px solid currentColor;
+  padding:.5rem 1.4rem;
+  text-decoration:none;
+  color:inherit;
+  position:relative;
+}
+.outline{background:none}
+
+.magnetic{transition:transform .2s}
+
+/* SECTIONS */
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:140px 24px;
+  text-align:center;
+}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{letter-spacing:6px;font-size:.75rem;color:#777}
+h1{font-size:clamp(3.5rem,7vw,6rem);font-weight:900;line-height:.95}
+h1 span{font-style:italic;font-weight:300}
+.lead{max-width:720px;margin:2.4rem auto;color:#6e6e73}
+body.dark .lead{color:#9b9b9f}
+
+h2{font-size:2.3rem;margin-bottom:1.2rem}
+p{max-width:680px;margin:auto;color:#6e6e73}
+body.dark p{color:#9b9b9f}
+
+.grid{
+  margin-top:3rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.5rem;
+}
+.card{
+  padding:2.5rem;
+  border:1px solid rgba(0,0,0,.06);
+}
+body.dark .card{border-color:rgba(255,255,255,.1)}
+
+.soft{background:rgba(0,0,0,.03)}
+body.dark .soft{background:rgba(255,255,255,.03)}
+
+.footer{padding:120px 24px}
+.footer-actions a{margin:.4rem}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
 }
 
-body.dark .cursor-glow {
-  background: radial-gradient(circle, rgba(255,255,255,.09), transparent 60%);
-}
-
-/* CANVAS */
-canvas {
-  position: absolute;
-  inset: 0;
-}
-
-/* ===== HERO ===== */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 24px;
-  backdrop-filter: blur(0px);
-}
-
-.eyebrow {
-  font-size: 0.75rem;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  color: #777;
-  margin-bottom: 2rem;
-}
-
-h1 {
-  font-size: clamp(3.5rem, 8vw, 6rem);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -2.5px;
-}
-
-h1 span {
-  font-style: italic;
-  font-weight: 300;
-}
-
-.sub {
-  max-width: 680px;
-  margin-top: 2.4rem;
-  font-size: 1.15rem;
-  color: #6e6e73;
-}
-
-body.dark .sub {
-  color: #9b9b9f;
-}
-
-.trust {
-  margin-top: 2.2rem;
-  font-size: 0.85rem;
-  color: #8a8a8f;
-}
-
-/* THEME TOGGLE */
-.theme-toggle {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-  color: inherit;
+/* TOGGLE */
+.theme-toggle{
+  background:none;
+  border:none;
+  font-size:1.2rem;
+  cursor:pointer;
+  color:inherit;
 }
