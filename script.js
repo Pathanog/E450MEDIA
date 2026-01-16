@@ -1,94 +1,69 @@
-const canvas = document.getElementById("rippleCanvas");
-const ctx = canvas.getContext("2d");
-const glow = document.getElementById("cursorGlow");
-const reveals = document.querySelectorAll(".reveal");
-const navLinks = document.querySelectorAll(".nav-link");
-const sections = [...navLinks].map(l => document.querySelector(l.getAttribute("href")));
+// WATER RIPPLE BACKGROUND
+const canvas = document.getElementById('waterCanvas');
+const ctx = canvas.getContext('2d');
 
 let w = canvas.width = innerWidth;
 let h = canvas.height = innerHeight;
+
 let ripples = [];
-let lx = 0, ly = 0;
 
 class Ripple {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-    this.r = 0;
-    this.a = 0.08;
+  constructor(x,y){
+    this.x=x;
+    this.y=y;
+    this.r=0;
+    this.a=0.12;
   }
-  update() {
-    this.r += 1.4;
-    this.a -= 0.002;
+  update(){
+    this.r+=1.4;
+    this.a-=0.002;
   }
-  draw() {
+  draw(){
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    ctx.strokeStyle = `rgba(0,0,0,${this.a})`;
+    ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
+    ctx.strokeStyle=`rgba(0,100,120,${this.a})`;
     ctx.stroke();
   }
 }
 
-addEventListener("mousemove", e => {
-  const dx = e.clientX - lx;
-  const dy = e.clientY - ly;
-  const speed = Math.hypot(dx, dy);
-  lx = e.clientX;
-  ly = e.clientY;
-
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
-  glow.style.width = 220 + speed * 3 + "px";
-  glow.style.height = 220 + speed * 3 + "px";
-
-  ripples.push(new Ripple(e.clientX, e.clientY));
+addEventListener('mousemove',e=>{
+  ripples.push(new Ripple(e.clientX,e.clientY));
 });
 
-function onScroll() {
-  reveals.forEach(el => {
-    if (el.getBoundingClientRect().top < innerHeight * 0.85) {
-      el.classList.add("active");
-    }
-  });
-
-  sections.forEach((sec, i) => {
-    const r = sec.getBoundingClientRect();
-    if (r.top < 200 && r.bottom > 200) {
-      navLinks.forEach(n => n.classList.remove("active"));
-      navLinks[i].classList.add("active");
-    }
-  });
-}
-
-addEventListener("scroll", onScroll);
-onScroll();
-
-function animate() {
-  ctx.clearRect(0, 0, w, h);
-  ripples.forEach((r, i) => {
+function animate(){
+  ctx.clearRect(0,0,w,h);
+  ripples.forEach((r,i)=>{
     r.update();
     r.draw();
-    if (r.a <= 0) ripples.splice(i, 1);
+    if(r.a<=0) ripples.splice(i,1);
   });
   requestAnimationFrame(animate);
 }
-
 animate();
 
-addEventListener("resize", () => {
-  w = canvas.width = innerWidth;
-  h = canvas.height = innerHeight;
+addEventListener('resize',()=>{
+  w=canvas.width=innerWidth;
+  h=canvas.height=innerHeight;
 });
 
-/* COPY EMAIL */
-function copyEmail() {
-  const email = "e450media@gmail.com";
-  navigator.clipboard.writeText(email);
+// REVEAL
+document.addEventListener('scroll',()=>{
+  document.querySelectorAll('.reveal').forEach(el=>{
+    if(el.getBoundingClientRect().top < innerHeight*0.85){
+      el.classList.add('active');
+    }
+  });
+});
 
-  const msg = document.getElementById("copyMsg");
-  msg.classList.add("show");
-
-  setTimeout(() => {
-    msg.classList.remove("show");
-  }, 1500);
+// EMAIL COPY
+function copyEmail(){
+  navigator.clipboard.writeText('e450media@gmail.com');
+  const m=document.getElementById('copyMsg');
+  m.style.opacity=1;
+  setTimeout(()=>m.style.opacity=0,1500);
 }
+
+// HAMBURGER
+document.getElementById('hamburger').onclick=()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+};
