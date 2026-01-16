@@ -224,3 +224,37 @@ p{
   h1{font-size:clamp(2.2rem,9vw,3.2rem)}
   .lead{color:#000}
 }
+/* EMAIL COPY */
+.contact-info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-info .label {
+  display: block;
+  font-size: .75rem;
+  letter-spacing: 2px;
+  color: #777;
+  margin-bottom: .5rem;
+}
+
+.copy-email {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #000;
+}
+
+.copy-msg {
+  display: block;
+  font-size: .75rem;
+  margin-top: .4rem;
+  opacity: 0;
+  transition: .3s;
+}
+
+.copy-msg.show {
+  opacity: 1;
+}
