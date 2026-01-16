@@ -1,6 +1,6 @@
-// WATER RIPPLE BACKGROUND
-const canvas = document.getElementById('waterCanvas');
-const ctx = canvas.getContext('2d');
+// WATER RIPPLE (SOFT COLOR, FULL PAGE)
+const canvas = document.getElementById("waterCanvas");
+const ctx = canvas.getContext("2d");
 
 let w = canvas.width = innerWidth;
 let h = canvas.height = innerHeight;
@@ -12,22 +12,31 @@ class Ripple {
     this.x=x;
     this.y=y;
     this.r=0;
-    this.a=0.12;
+    this.a=0.08;
   }
   update(){
-    this.r+=1.4;
-    this.a-=0.002;
+    this.r += 1.4;
+    this.a -= 0.002;
   }
   draw(){
     ctx.beginPath();
     ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
-    ctx.strokeStyle=`rgba(0,100,120,${this.a})`;
+    ctx.strokeStyle = `rgba(0,0,0,${this.a})`;
     ctx.stroke();
   }
 }
 
-addEventListener('mousemove',e=>{
-  ripples.push(new Ripple(e.clientX,e.clientY));
+function addRipple(x,y){
+  ripples.push(new Ripple(x,y));
+}
+
+addEventListener("mousemove",e=>{
+  addRipple(e.clientX,e.clientY);
+});
+
+addEventListener("touchstart",e=>{
+  const t=e.touches[0];
+  addRipple(t.clientX,t.clientY);
 });
 
 function animate(){
@@ -41,29 +50,38 @@ function animate(){
 }
 animate();
 
-addEventListener('resize',()=>{
+addEventListener("resize",()=>{
   w=canvas.width=innerWidth;
   h=canvas.height=innerHeight;
 });
 
-// REVEAL
-document.addEventListener('scroll',()=>{
-  document.querySelectorAll('.reveal').forEach(el=>{
-    if(el.getBoundingClientRect().top < innerHeight*0.85){
-      el.classList.add('active');
+// REVEAL + ACTIVE NAV
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+addEventListener("scroll",()=>{
+  const scrollY = window.scrollY + 150;
+
+  sections.forEach((sec,i)=>{
+    if(scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight){
+      navLinks.forEach(n=>n.classList.remove("active"));
+      navLinks[i].classList.add("active");
+    }
+    if(sec.getBoundingClientRect().top < innerHeight*0.85){
+      sec.classList.add("active");
     }
   });
 });
 
 // EMAIL COPY
 function copyEmail(){
-  navigator.clipboard.writeText('e450media@gmail.com');
-  const m=document.getElementById('copyMsg');
+  navigator.clipboard.writeText("e450media@gmail.com");
+  const m=document.getElementById("copyMsg");
   m.style.opacity=1;
   setTimeout(()=>m.style.opacity=0,1500);
 }
 
 // HAMBURGER
-document.getElementById('hamburger').onclick=()=>{
-  document.getElementById('navLinks').classList.toggle('open');
+document.getElementById("hamburger").onclick=()=>{
+  document.getElementById("navLinks").classList.toggle("open");
 };
