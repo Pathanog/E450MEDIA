@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>E450MEDIA | Digital Growth Studio</title>
 
 <link rel="stylesheet" href="style.css">
@@ -11,15 +11,10 @@
 
 <body>
 
-<!-- BACKGROUND SYSTEM -->
-<div class="bg-system">
-    <div class="line v1"></div>
-    <div class="line v2"></div>
-    <div class="line v3"></div>
-
-    <div class="glass-orb orb-1"></div>
-    <div class="glass-orb orb-2"></div>
-
+<!-- PREMIUM BACKGROUND -->
+<div class="premium-bg">
+    <div class="gradient-layer"></div>
+    <div class="particles"></div>
     <canvas id="rippleCanvas"></canvas>
 </div>
 
@@ -28,8 +23,8 @@
     <div class="nav-inner">
         <img src="logo.png" class="nav-logo" alt="E450MEDIA">
         <div class="nav-links">
-            <a href="#process" class="hide-mobile">How We Work</a>
-            <a href="https://wa.me/916360199676" class="btn-pill">Start Project</a>
+            <button id="themeToggle" class="toggle">◐</button>
+            <a href="https://wa.me/916360199676" class="btn-pill">Contact</a>
         </div>
     </div>
 </nav>
@@ -39,15 +34,15 @@
 <!-- HERO -->
 <section class="hero">
     <div class="container">
-        <span class="eyebrow">Digital Management Studio</span>
+        <span class="eyebrow">Digital Growth Studio</span>
         <h1>We manage.<br><span class="thin-italic">You grow.</span></h1>
 
         <p class="hero-sub">
-            We help startups and small businesses build a strong, professional digital presence —
-            without expensive agencies, long contracts, or confusion.
+            A modern studio helping startups and small businesses
+            build a clean, credible, and high-performing digital presence.
         </p>
 
-        <a href="https://wa.me/916360199676" class="btn-solid">Get Free Growth Audit</a>
+        <p class="trust-line">Trusted by early-stage startups and founders</p>
     </div>
 </section>
 
@@ -55,14 +50,14 @@
 <section class="section">
     <div class="container">
         <span class="eyebrow">Who We Are</span>
-        <h2>A Studio Built for Founders</h2>
+        <h2>Focused on What Actually Matters</h2>
 
         <p class="text-block">
-            E450MEDIA is a digital growth studio created for founders who are serious about growth
-            but don’t want to waste money on traditional agencies.
+            E450MEDIA is a digital management studio built for founders who want clarity,
+            consistency, and quality in their online presence.
             <br><br>
-            We focus on one thing only — managing your digital presence end-to-end so your brand
-            looks trustworthy, active, and growing from day one.
+            We handle strategy, content, and ongoing management so your brand looks active,
+            polished, and professional across platforms.
         </p>
     </div>
 </section>
@@ -70,94 +65,52 @@
 <!-- WHAT WE DO -->
 <section class="section soft">
     <div class="container">
-        <span class="eyebrow">What We Manage</span>
-        <h2>Your Entire Online Presence</h2>
+        <span class="eyebrow">What We Do</span>
+        <h2>End-to-End Digital Management</h2>
 
         <div class="grid">
             <div class="card">
-                <span class="index">01</span>
                 <h3>Content Creation</h3>
-                <p>
-                    We create reels, posts, visuals, and captions designed to grab attention,
-                    look premium, and perform on algorithms.
-                </p>
+                <p>Visuals, reels, posts, and copy designed for modern platforms.</p>
             </div>
 
             <div class="card">
-                <span class="index">02</span>
                 <h3>Social Media Management</h3>
-                <p>
-                    Posting schedules, consistency, engagement tracking, and optimization —
-                    fully handled so you don’t have to worry.
-                </p>
+                <p>Consistency, posting, structure, and performance tracking.</p>
             </div>
 
             <div class="card">
-                <span class="index">03</span>
                 <h3>Brand Positioning</h3>
-                <p>
-                    We shape how your business appears online so customers instantly trust you
-                    and see you as a serious brand.
-                </p>
+                <p>A clear, premium look that builds trust with your audience.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- PROCESS -->
-<section id="process" class="section">
+<section class="section">
     <div class="container">
-        <span class="eyebrow">Our Process</span>
-        <h2>Simple. Transparent. Effective.</h2>
+        <span class="eyebrow">Process</span>
+        <h2>Simple and Transparent</h2>
 
         <div class="grid">
-            <div class="card">
-                <span class="index">01</span>
-                <h3>Audit</h3>
-                <p>
-                    We review your current digital presence, competitors, and content gaps.
-                </p>
-            </div>
-
-            <div class="card">
-                <span class="index">02</span>
-                <h3>Strategy</h3>
-                <p>
-                    A clear content and growth plan made specifically for your business and budget.
-                </p>
-            </div>
-
-            <div class="card">
-                <span class="index">03</span>
-                <h3>Create</h3>
-                <p>
-                    Professional, clean content produced consistently to build visibility and trust.
-                </p>
-            </div>
-
-            <div class="card">
-                <span class="index">04</span>
-                <h3>Manage</h3>
-                <p>
-                    We manage posting, optimization, and growth — while you focus on running your business.
-                </p>
-            </div>
+            <div class="card">Audit and discovery</div>
+            <div class="card">Strategy and planning</div>
+            <div class="card">Content creation</div>
+            <div class="card">Ongoing management</div>
         </div>
     </div>
 </section>
 
-<!-- WHY US -->
+<!-- PRICING -->
 <section class="section soft">
     <div class="container">
-        <span class="eyebrow">Why E450MEDIA</span>
-        <h2>Affordable Growth That Makes Sense</h2>
+        <span class="eyebrow">Pricing</span>
+        <h2>Designed to Be Accessible</h2>
 
         <p class="text-block">
-            ✔ Designed for startups & small businesses  
-            <br>✔ No long-term contracts  
-            <br>✔ Clear pricing, no hidden costs  
-            <br>✔ Direct WhatsApp communication  
-            <br>✔ Clean, professional, result-focused work
+            Our pricing is structured to support startups and small businesses.
+            Flexible plans based on needs, scale, and goals.
         </p>
     </div>
 </section>
@@ -166,12 +119,12 @@
 <footer class="footer">
     <div class="container footer-grid">
         <div>
-            <h3>Ready to Build Your Digital Presence?</h3>
-            <p>Let’s make your brand look active, credible, and growing.</p>
+            <h3>Let’s Talk</h3>
+            <p>Start a conversation about your digital presence.</p>
 
             <div class="footer-actions">
-                <a href="https://wa.me/916360199676" class="btn-solid">WhatsApp Us</a>
-                <a href="mailto:e450media@gmail.com" class="btn-outline">Email Us</a>
+                <a href="https://wa.me/916360199676" class="btn-solid">WhatsApp</a>
+                <a href="mailto:e450media@gmail.com" class="btn-outline">Email</a>
             </div>
         </div>
 
