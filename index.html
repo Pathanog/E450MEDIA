@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<!-- BACKGROUND -->
+<!-- GLOBAL BACKGROUND -->
 <div class="bg">
   <canvas id="waterCanvas"></canvas>
   <div class="lines"></div>
@@ -22,15 +22,15 @@
     <div class="logo">E450MEDIA</div>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="#hero" class="active">Home</a></li>
-      <li><a href="#who">Who</a></li>
-      <li><a href="#what">What</a></li>
-      <li><a href="#how">How</a></li>
-      <li><a href="#why">Why</a></li>
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#who" class="nav-link">Who</a></li>
+      <li><a href="#what" class="nav-link">What</a></li>
+      <li><a href="#how" class="nav-link">How</a></li>
+      <li><a href="#why" class="nav-link">Why</a></li>
     </ul>
 
     <div class="nav-actions">
-      <a href="https://wa.me/916360199676" class="btn">WhatsApp</a>
+      <a href="https://wa.me/916360199676" class="btn btn-black">WhatsApp</a>
       <button class="hamburger" id="hamburger">☰</button>
     </div>
   </div>
@@ -49,83 +49,56 @@
 <!-- WHO -->
 <section id="who" class="section reveal">
   <h2>Who We Are</h2>
-  <p>
-    E450MEDIA is a digital management studio built for early-stage brands that
-    want structure instead of noise. We work closely with founders to
-    simplify growth, clarify positioning, and build a strong online identity
-    without unnecessary complexity.
+  <p class="section-text">
+    E450MEDIA is a digital management studio built for early-stage brands
+    that want structure instead of noise. We focus on clarity, consistency,
+    and long-term brand trust.
   </p>
 
-  <ul class="points">
-    <li>Founder-first mindset</li>
-    <li>Small, focused client base</li>
-    <li>Transparent communication</li>
-  </ul>
+  <div class="grid three">
+    <div class="card">Founder-first mindset</div>
+    <div class="card">Small, focused client base</div>
+    <div class="card">Transparent communication</div>
+  </div>
 </section>
 
 <!-- WHAT -->
 <section id="what" class="section soft reveal">
   <h2>What We Do</h2>
-
-  <div class="grid">
+  <div class="grid four">
     <div class="card">Content strategy & planning</div>
     <div class="card">Social media management</div>
-    <div class="card">Brand positioning & messaging</div>
-    <div class="card">Visual consistency & identity</div>
-    <div class="card">Account optimization & audits</div>
+    <div class="card">Brand positioning</div>
+    <div class="card">Visual consistency</div>
   </div>
 </section>
 
 <!-- HOW -->
 <section id="how" class="section reveal">
   <h2>How We Work</h2>
-
-  <div class="grid">
-    <div class="card">
-      <strong>1. Understand</strong><br>
-      We learn your product, audience, and goals before doing anything.
-    </div>
-
-    <div class="card">
-      <strong>2. Structure</strong><br>
-      We design a clear content and positioning system.
-    </div>
-
-    <div class="card">
-      <strong>3. Execute</strong><br>
-      We manage content, posting, and presentation consistently.
-    </div>
-
-    <div class="card">
-      <strong>4. Improve</strong><br>
-      We refine based on performance, not assumptions.
-    </div>
+  <div class="grid four">
+    <div class="card">Understand your brand & goals</div>
+    <div class="card">Build clear structure</div>
+    <div class="card">Execute consistently</div>
+    <div class="card">Refine based on feedback</div>
   </div>
 </section>
 
 <!-- WHY -->
 <section id="why" class="section soft reveal">
   <h2>Why E450MEDIA</h2>
-
-  <p>
-    We don’t chase vanity metrics or trends.
-    Our focus is long-term brand trust, clean presentation,
-    and steady growth that feels natural — not forced.
-  </p>
-
-  <ul class="points">
-    <li>No fake promises</li>
-    <li>No unnecessary retainers</li>
-    <li>No overcomplicated marketing</li>
-  </ul>
+  <div class="grid three">
+    <div class="card">No fake promises</div>
+    <div class="card">Affordable & transparent</div>
+    <div class="card">Built for long-term growth</div>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer reveal">
-
   <div class="contact">
     <span class="label">Email us</span>
-    <button class="copy-email" onclick="copyEmail()">e450media@gmail.com</button>
+    <div class="email" onclick="copyEmail()">e450media@gmail.com</div>
     <span id="copyMsg">Copied</span>
   </div>
 
@@ -133,7 +106,6 @@
     <a href="https://instagram.com/e450media" target="_blank">Instagram</a>
     <a href="https://x.com/e450media" target="_blank">X</a>
   </div>
-
 </footer>
 
 <script src="script.js"></script>
